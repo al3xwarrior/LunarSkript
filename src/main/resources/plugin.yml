@@ -1,0 +1,7 @@
+name: LunarSkript
+version: '1.0'
+main: com.al3x.lunarSkript.LunarSkript
+api-version: '1.21'
+authors: [ Al3x ]
+description: Implement Lunars Apollo API to your server
+depend: [Apollo-Bukkit, Skript]
