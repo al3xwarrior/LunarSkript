@@ -43,6 +43,7 @@ public class showBeamWithId extends Effect {
         Number ypos = y.getSingle(event);
         Number zpos = z.getSingle(event);
         String beamId = id.getSingle(event);
+        if (target == null) return;
 
         Optional<ApolloPlayer> apolloPlayerOpt = Apollo.getPlayerManager().getPlayer(target.getUniqueId());
 
@@ -64,7 +65,7 @@ public class showBeamWithId extends Effect {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return null;
+        return "Remove All Beams Effect with expression player " + player.toString(event, b);
     }
 
     @Override

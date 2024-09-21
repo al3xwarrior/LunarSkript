@@ -60,7 +60,7 @@ public class updateNametag extends Effect {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return null;
+        return "Update Nametag Effect with expression player " + targetPlayer.toString(event, b) + " with lines " + lines.toString(event, b);
     }
 
     @Override

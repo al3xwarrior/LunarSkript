@@ -31,6 +31,7 @@ public class removeBeamWithId extends Effect {
     protected void execute(Event event) {
         Player target = player.getSingle(event);
         String beamId = id.getSingle(event);
+        if (target == null) return;
 
         Optional<ApolloPlayer> apolloPlayerOpt = Apollo.getPlayerManager().getPlayer(target.getUniqueId());
         apolloPlayerOpt.ifPresent(apolloPlayer -> beamModule.removeBeam(apolloPlayer, beamId));
@@ -38,7 +39,7 @@ public class removeBeamWithId extends Effect {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return null;
+        return "RemoveBeamWithID Effect with expression player " + player.toString(event, b) + " and ID " + id.toString(event, b);
     }
 
     @Override

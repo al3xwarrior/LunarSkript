@@ -29,6 +29,7 @@ public class removeAllBeams extends Effect {
     @Override
     protected void execute(Event event) {
         Player target = player.getSingle(event);
+        if (target == null) return;
 
         Optional<ApolloPlayer> apolloPlayerOpt = Apollo.getPlayerManager().getPlayer(target.getUniqueId());
         apolloPlayerOpt.ifPresent(beamModule::resetBeams);
@@ -36,7 +37,7 @@ public class removeAllBeams extends Effect {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return null;
+        return "Remove All Beams Effect with expression player " + player.toString(event, b);
     }
 
     @Override

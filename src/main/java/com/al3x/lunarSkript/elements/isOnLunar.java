@@ -23,7 +23,7 @@ public class isOnLunar extends Condition {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return "Example expression with expression player " + player.toString(event, b);
+        return "IsOnLunar expression with expression player " + player.toString(event, b);
     }
 
     @Override

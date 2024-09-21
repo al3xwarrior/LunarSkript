@@ -32,6 +32,7 @@ public class enableStaffMods extends Effect {
     @Override
     protected void execute(Event event) {
         Player target = player.getSingle(event);
+        if (target == null) return;
 
         Optional<ApolloPlayer> apolloPlayerOpt = Apollo.getPlayerManager().getPlayer(target.getUniqueId());
         apolloPlayerOpt.ifPresent(apolloPlayer -> staffModModule.enableStaffMods(apolloPlayer, Collections.singletonList(StaffMod.XRAY)));
@@ -39,7 +40,7 @@ public class enableStaffMods extends Effect {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return null;
+        return "Enable StaffModeEffect Effect with expression player " + player.toString(event, b);
     }
 
     @Override

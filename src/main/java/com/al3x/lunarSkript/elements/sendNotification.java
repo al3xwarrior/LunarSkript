@@ -53,7 +53,7 @@ public class sendNotification extends Effect {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return null;
+        return "Send Notification Effect with expression player " + player.toString(event, b) + " with title " + title.toString(event, b)  + " with description " + description.toString(event, b) + " with duration " + duration.toString(event, b);
     }
 
     @Override
